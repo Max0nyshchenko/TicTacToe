@@ -24,6 +24,8 @@ function startGame(){
     }
 }
 
+
+
 function turnClick(square) {
     if(typeof origBoard[square.target.id] == 'number') {
         turn(square.target.id, huPlayer);
@@ -92,7 +94,7 @@ function minimax(newBoard, player) {
     if(checkWin(newBoard, player)) {
         return {score: -10}
     } else if(checkWin(newBoard, aiPlayer)) {
-        return {score: 20}
+        return {score: 10}
     } else if(availSpots.length === 0) {
         return {score:0}
     }
